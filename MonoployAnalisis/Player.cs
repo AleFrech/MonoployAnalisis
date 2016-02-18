@@ -19,6 +19,7 @@ namespace MonoployAnalisis
         private PlayerPiece _piece;
         private int _funds;
         private int _currentPosition;
+        private IList<Property> _ownedProperties;
         public PlayerPiece Piece
         {
             get { return this._piece; }
@@ -37,6 +38,7 @@ namespace MonoployAnalisis
             _piece = piece;
             _funds = 500;
             _currentPosition = 0;
+            _ownedProperties = new List<Property>();
         }
 
         public int AddFunds(int fundsToAdd)
@@ -55,6 +57,5 @@ namespace MonoployAnalisis
             _funds -= amountToTransfer;
             receivingPlayer.AddFunds(amountToTransfer);
         }
-
     }
 }
