@@ -7,19 +7,19 @@ using System.Windows.Forms;
 
 namespace MonoployAnalisis
 {
-    class Jail
+    class Jail : BoardObject
     {
         private List<Player> _playerInJail;
         private List<int> _turnsInJail;
 
-        public Jail()
+        public Jail():base("Go to jail")
         {
             _playerInJail = new List<Player>();
             _turnsInJail = new List<int>();
         }
 
 
-        public bool playerIsInJail(Player player)
+        public bool PlayerIsInJail(Player player)
         {
             foreach (var p in _playerInJail)
             {
@@ -29,25 +29,25 @@ namespace MonoployAnalisis
             return false;
         }
 
-        public void goToJail(Player player)
+        public void GoToJail(Player player)
         {
             _playerInJail.Add(player);
             _turnsInJail.Add(3);
 
         }
 
-        public void leaveJail(Player player)
+        public void LeaveJail(Player player)
         {
             _playerInJail.Remove(player);
             _turnsInJail.RemoveAt(_playerInJail.IndexOf(player));
         }
 
 
-        public bool attemptingToJail(int dice1, int dice2, Player player)
+        public bool AttemptingToJail(int dice1, int dice2, Player player)
         {
             if (dice1 == dice2)
             {
-                leaveJail(player);
+                LeaveJail(player);
                 return true;
             }
 
@@ -60,7 +60,7 @@ namespace MonoployAnalisis
 
             MessageBox.Show(player.Name + @" you have reached the max limit of turns a 50$ fee has been a credit to your bank account", @"Important Message");
             //penalty of -50$ should be applied
-            leaveJail(player);
+            LeaveJail(player);
             return true;
         }
     }
