@@ -34,11 +34,15 @@ namespace MonoployAnalisis
 
         public Player(PlayerPiece piece)
         {
-            this._piece = piece;
-            this._funds = 500;
-            this._currentPosition = 0;
+            _piece = piece;
+            _funds = 500;
+            _currentPosition = 0;
         }
 
-        
+        public int AddFunds(int fundsToAdd)
+        {
+            _funds += fundsToAdd;
+            return Funds;
+        }
     }
 }
