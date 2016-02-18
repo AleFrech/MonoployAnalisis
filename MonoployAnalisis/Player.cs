@@ -17,15 +17,20 @@ namespace MonoployAnalisis
         };
 
         private PlayerPiece _piece;
+        private int _funds;
         public PlayerPiece Piece
         {
             get { return this._piece; }
         }
+        public int Funds
+        {
+            get { return _funds;  }
+        }
+        public int CurrentPosition;
 
         public Player(PlayerPiece piece)
         {
             this._piece = piece;
         }
-
     }
 }
