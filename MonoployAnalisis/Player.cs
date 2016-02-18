@@ -51,7 +51,7 @@ namespace MonoployAnalisis
         {
             if(Funds < amountToTransfer)
             {
-                throw new Exception("InsufficientFundsException");
+                throw new InsufficientFundsException("Not Enough funds to transfer to other player");
             }
 
             _funds -= amountToTransfer;
@@ -62,7 +62,7 @@ namespace MonoployAnalisis
         {
             if (Funds < property.Cost)
             {
-                throw new Exception("InsufficientFundsException");
+                throw new InsufficientFundsException("Not enough Funds to purchase the property");
             }
 
             _funds -= property.Cost;
