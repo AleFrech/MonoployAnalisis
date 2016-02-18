@@ -9,7 +9,7 @@ namespace MonoployAnalisis
     class Property
     {
         private int _cost;
-        public Player _owner;
+        public Player Owner;
 
         public int Cost
         {

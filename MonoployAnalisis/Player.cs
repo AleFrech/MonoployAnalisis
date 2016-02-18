@@ -57,5 +57,17 @@ namespace MonoployAnalisis
             _funds -= amountToTransfer;
             receivingPlayer.AddFunds(amountToTransfer);
         }
+
+        public void PurchaseProperty(Property property)
+        {
+            if (Funds < property.Cost)
+            {
+                throw new Exception("InsufficientFundsException");
+            }
+
+            _funds -= property.Cost;
+            _ownedProperties.Add(property);
+            property.Owner = this;
+        }
     }
 }
