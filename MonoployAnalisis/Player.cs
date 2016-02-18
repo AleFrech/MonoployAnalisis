@@ -19,6 +19,7 @@ namespace MonoployAnalisis
         private PlayerPiece _piece;
         private int _funds;
         private int _currentPosition;
+        private string _name;
         private IList<Property> _ownedProperties;
         public PlayerPiece Piece
         {
@@ -32,13 +33,17 @@ namespace MonoployAnalisis
         {
             get { return _currentPosition; }
         }
-
-        public Player(PlayerPiece piece)
+        public string Name
+        {
+            get { return _name; }
+        }
+        public Player(PlayerPiece piece, string name)
         {
             _piece = piece;
             _funds = 500;
             _currentPosition = 0;
             _ownedProperties = new List<Property>();
+            _name = name;
         }
 
         public int AddFunds(int fundsToAdd)
