@@ -44,5 +44,17 @@ namespace MonoployAnalisis
             _funds += fundsToAdd;
             return Funds;
         }
+
+        public void TransferFunds(Player receivingPlayer, int amountToTransfer)
+        {
+            if(Funds < amountToTransfer)
+            {
+                throw new Exception("InsufficientFundsException");
+            }
+
+            _funds -= amountToTransfer;
+            receivingPlayer.AddFunds(amountToTransfer);
+        }
+
     }
 }
