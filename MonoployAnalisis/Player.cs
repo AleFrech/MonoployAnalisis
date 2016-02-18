@@ -18,6 +18,7 @@ namespace MonoployAnalisis
 
         private PlayerPiece _piece;
         private int _funds;
+        private int _currentPosition;
         public PlayerPiece Piece
         {
             get { return this._piece; }
@@ -26,11 +27,18 @@ namespace MonoployAnalisis
         {
             get { return _funds;  }
         }
-        public int CurrentPosition;
+        public int CurrentPosition
+        {
+            get { return _currentPosition; }
+        }
 
         public Player(PlayerPiece piece)
         {
             this._piece = piece;
+            this._funds = 500;
+            this._currentPosition = 0;
         }
+
+        
     }
 }
