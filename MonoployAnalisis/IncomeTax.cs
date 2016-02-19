@@ -15,7 +15,7 @@ namespace MonoployAnalisis
 
         public bool ChargeIncome(Player player)
         {
-            return Bank.ReduceFunds(player, 200);
+            return Bank.ReduceFunds(player, 200,true);
         }
     }
 }
