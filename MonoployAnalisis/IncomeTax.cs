@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace MonoployAnalisis
 {
-     public class BoardObject
+    public class IncomeTax:BoardObject
     {
-        private string _name;
-
-        public BoardObject(string name)
+        public IncomeTax() : base("Income Tax")
         {
-            _name = name;
+            
         }
 
-        public string GetName()
+        public bool ChargeIncome(Player player)
         {
-            return _name;
+            return Bank.ReduceFunds(player, 200);
         }
     }
 }
