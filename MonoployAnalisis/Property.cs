@@ -8,18 +8,6 @@ namespace MonoployAnalisis
 {
     class Property
     {
-        private int _cost;
-        public Player Owner;
-
-        public int Cost
-        {
-            get { return _cost; }
-        }
-
-        public Property(int cost)
-        {
-            _owner = null;
-            _cost = cost;
-        }
+ 
     }
 }

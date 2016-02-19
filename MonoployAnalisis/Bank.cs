@@ -8,7 +8,7 @@ namespace MonoployAnalisis
 {
     class Bank
     {
-        private static int _GO = 200;
+        private static int _go = 200;
         private static int _startingFunds =  1500;
 
         public static bool TransferFunds(Player fromPlayer, Player toPlayer, int amount, bool reThrows) 
@@ -26,6 +26,11 @@ namespace MonoployAnalisis
             return true;
         }
 
+        public static bool TransferFunds(Player fromPlayer, Player toPlayer, int amount)
+        {
+            return TransferFunds(fromPlayer, toPlayer, amount, false);
+        }
+
         public static void AddGo(Player player)
         {
             player.AddFunds(_GO);
@@ -40,7 +45,7 @@ namespace MonoployAnalisis
         private static int CalculateRent(Property property)
         {
             int rent = 0;
-            rent += property.Cost;
+            rent += property._cost;
             rent += property._housePrices[property.GetHousesAmount];
             rent += property.GetHasHotel ? property._hotelPrice : 0;
 
