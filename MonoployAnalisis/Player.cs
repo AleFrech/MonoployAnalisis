@@ -40,7 +40,7 @@ namespace MonoployAnalisis
         public Player(PlayerPiece piece, string name)
         {
             _piece = piece;
-            _funds = 500;
+            _funds = 0;
             _currentPosition = 0;
             _ownedProperties = new List<Property>();
             _name = name;
