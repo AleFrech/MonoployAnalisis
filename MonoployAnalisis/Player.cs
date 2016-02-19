@@ -73,7 +73,7 @@ namespace MonoployAnalisis
             receivingPlayer.AddFunds(amountToTransfer);
         }
 
-       /* public void PurchaseProperty(Property property)
+        public void PurchaseProperty(Property property)
         {
             if (Funds < property._cost)
             {
@@ -83,6 +83,6 @@ namespace MonoployAnalisis
             _funds -= property._cost;
             _ownedProperties.Add(property);
             property.Owner = this;
-        }*/
+        }
     }
 }
