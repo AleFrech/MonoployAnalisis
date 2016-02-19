@@ -1,6 +1,5 @@
-﻿using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace MonoployAnalisis
@@ -33,6 +32,8 @@ namespace MonoployAnalisis
         /// </summary>
         private void InitializeComponent()
         {
+
+            
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.board = new System.Windows.Forms.PictureBox();
             this.nameP1 = new System.Windows.Forms.Label();
@@ -91,6 +92,8 @@ namespace MonoployAnalisis
             this.pieceP1.Location = new System.Drawing.Point(17, 64);
             this.pieceP1.Name = "pieceP1";
             this.pieceP1.Size = new System.Drawing.Size(76, 69);
+            this.pieceP1.Image = global::MonoployAnalisis.Properties.Resources.ship;
+            this.pieceP1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pieceP1.TabIndex = 3;
             this.pieceP1.TabStop = false;
             // 
@@ -175,8 +178,11 @@ namespace MonoployAnalisis
             this.pieceP2.Location = new System.Drawing.Point(17, 64);
             this.pieceP2.Name = "pieceP2";
             this.pieceP2.Size = new System.Drawing.Size(76, 69);
+            this.pieceP2.Image = global::MonoployAnalisis.Properties.Resources.fancyHat;
+            this.pieceP2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pieceP2.TabIndex = 3;
             this.pieceP2.TabStop = false;
+
             // 
             // fundsP2
             // 
@@ -225,6 +231,7 @@ namespace MonoployAnalisis
             ((System.ComponentModel.ISupportInitialize)(this.pieceP2)).EndInit();
             this.ResumeLayout(false);
 
+           
         }
         #endregion
 
@@ -243,10 +250,85 @@ namespace MonoployAnalisis
         private PictureBox pieceP2;
         private Label fundsP2;
 
-        private void selectPiece()
+
+        private void selectPiece(int pos, PictureBox playerBox)
         {
-            
+            switch (pos)
+            {
+                case 1:
+                    playerBox.Image = Properties.Resources.classicCar;
+                    break;
+                case 2:
+                    playerBox.Image = Properties.Resources.dedal;
+                    break;
+                case 3:
+                    playerBox.Image = Properties.Resources.fancyDog;
+                    break;
+                case 4:
+                    playerBox.Image = Properties.Resources.fancyHat;
+                    break;
+                case 5:
+                    playerBox.Image = Properties.Resources.iron;
+                    break;
+                case 6:
+                    playerBox.Image = Properties.Resources.oldBoot;
+                    break;
+                case 7:
+                    playerBox.Image = Properties.Resources.ship;
+                    break;
+                case 8:
+                    playerBox.Image = Properties.Resources.wheelBarrow;
+                    break;
+                default:
+                    break;
+            }    
         }
+
+        public static DialogResult InputBox(string title, string promptText, ref string value)
+        {
+            Form form = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button buttonOk = new Button();
+            Button buttonCancel = new Button();
+
+            form.Text = title;
+            label.Text = promptText;
+            textBox.Text = value;
+
+            buttonOk.Text = "OK";
+            buttonCancel.Text = "Cancel";
+            buttonOk.DialogResult = DialogResult.OK;
+            buttonCancel.DialogResult = DialogResult.Cancel;
+
+            label.SetBounds(9, 20, 372, 13);
+            textBox.SetBounds(12, 36, 372, 20);
+            buttonOk.SetBounds(228, 72, 75, 23);
+            buttonCancel.SetBounds(309, 72, 75, 23);
+
+            label.AutoSize = true;
+            textBox.Anchor = textBox.Anchor | AnchorStyles.Right;
+            buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+
+            form.ClientSize = new Size(396, 107);
+            form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
+            form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+            form.AcceptButton = buttonOk;
+            form.CancelButton = buttonCancel;
+
+            DialogResult dialogResult = form.ShowDialog();
+            value = textBox.Text;
+            return dialogResult;
+        }
+
+        //40 casillas
+
+
 
     }
 }
