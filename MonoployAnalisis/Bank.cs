@@ -74,5 +74,10 @@ namespace MonoployAnalisis
 
             return true;
         }
+
+        public static bool ReduceFunds(Player player, int amount)
+        {
+            return ReduceFunds(player, amount, false);
+        }
     }
 }
