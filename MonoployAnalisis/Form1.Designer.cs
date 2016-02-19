@@ -44,10 +44,10 @@ namespace MonoployAnalisis
             this.dice2 = new System.Windows.Forms.PictureBox();
             this.rollDice = new System.Windows.Forms.Button();
             this.panelP2 = new System.Windows.Forms.Panel();
+            this.nameP2 = new System.Windows.Forms.Label();
             this.propertiesP2 = new System.Windows.Forms.ComboBox();
             this.pieceP2 = new System.Windows.Forms.PictureBox();
             this.fundsP2 = new System.Windows.Forms.Label();
-            this.nameP2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.board)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pieceP1)).BeginInit();
             this.panelP1.SuspendLayout();
@@ -101,13 +101,14 @@ namespace MonoployAnalisis
             this.fundsP1.ForeColor = System.Drawing.Color.Lime;
             this.fundsP1.Location = new System.Drawing.Point(99, 93);
             this.fundsP1.Name = "fundsP1";
-            this.fundsP1.Size = new System.Drawing.Size(102, 31);
+            this.fundsP1.Size = new System.Drawing.Size(30, 31);
             this.fundsP1.TabIndex = 4;
-            this.fundsP1.Text = "$ 1000";
+            this.fundsP1.Text = "$";
             this.fundsP1.Click += new System.EventHandler(this.fundsP1_Click);
             // 
             // panelP1
             // 
+            this.panelP1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelP1.Controls.Add(this.propertiesP1);
             this.panelP1.Controls.Add(this.nameP1);
             this.panelP1.Controls.Add(this.pieceP1);
@@ -117,7 +118,6 @@ namespace MonoployAnalisis
             this.panelP1.Size = new System.Drawing.Size(223, 146);
             this.panelP1.TabIndex = 9;
             this.panelP1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            this.panelP1.BorderStyle = BorderStyle.FixedSingle;
             // 
             // dice1
             // 
@@ -152,6 +152,7 @@ namespace MonoployAnalisis
             // 
             // panelP2
             // 
+            this.panelP2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelP2.Controls.Add(this.nameP2);
             this.panelP2.Controls.Add(this.propertiesP2);
             this.panelP2.Controls.Add(this.pieceP2);
@@ -160,7 +161,16 @@ namespace MonoployAnalisis
             this.panelP2.Name = "panelP2";
             this.panelP2.Size = new System.Drawing.Size(223, 146);
             this.panelP2.TabIndex = 10;
-            this.panelP2.BorderStyle = BorderStyle.FixedSingle;
+            // 
+            // nameP2
+            // 
+            this.nameP2.AutoSize = true;
+            this.nameP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameP2.Location = new System.Drawing.Point(15, 9);
+            this.nameP2.Name = "nameP2";
+            this.nameP2.Size = new System.Drawing.Size(78, 25);
+            this.nameP2.TabIndex = 5;
+            this.nameP2.Text = "Player2";
             // 
             // propertiesP2
             // 
@@ -185,25 +195,15 @@ namespace MonoployAnalisis
             this.fundsP2.ForeColor = System.Drawing.Color.Lime;
             this.fundsP2.Location = new System.Drawing.Point(99, 93);
             this.fundsP2.Name = "fundsP2";
-            this.fundsP2.Size = new System.Drawing.Size(102, 31);
+            this.fundsP2.Size = new System.Drawing.Size(30, 31);
             this.fundsP2.TabIndex = 4;
-            this.fundsP2.Text = "$ 1000";
-            // 
-            // nameP2
-            // 
-            this.nameP2.AutoSize = true;
-            this.nameP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameP2.Location = new System.Drawing.Point(15, 9);
-            this.nameP2.Name = "nameP2";
-            this.nameP2.Size = new System.Drawing.Size(78, 25);
-            this.nameP2.TabIndex = 5;
-            this.nameP2.Text = "Player2";
+            this.fundsP2.Text = "$";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 750);
+            this.ClientSize = new System.Drawing.Size(1350, 741);
             this.Controls.Add(this.panelP2);
             this.Controls.Add(this.rollDice);
             this.Controls.Add(this.dice2);

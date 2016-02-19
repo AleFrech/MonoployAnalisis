@@ -37,6 +37,11 @@ namespace MonoployAnalisis
         {
             get { return _name; }
         }
+
+        public IList<Property> GetOwnedProperties
+        {
+            get { return _ownedProperties; }
+        }
         public Player(PlayerPiece piece, string name)
         {
             _piece = piece;

@@ -17,17 +17,17 @@ namespace MonoployAnalisis
 
     public class Property: BoardObject
     {
-        readonly Colors _colors;
-        readonly double _rent;
-        readonly double[] _housePrices;
-        readonly double _hotelPrice;
-        readonly double _mortgage;
-        readonly double _houseCost;
-        readonly double _cost;
-        public Player = Owner;
+        public readonly Colors _colors;
+        public readonly double _rent;
+        public readonly double[] _housePrices;
+        public readonly double _hotelPrice;
+        public readonly double _mortgage;
+        public readonly double _houseCost;
+        public readonly int _cost;
+        public Player  Owner;
         private bool _hasHotel;
         private int _housesAmount;
-        public Property(Colors colors, double rent, double[] housePrices, double hotelPrice, double mortgage, double houseCost, string name, double cost,Player Owner):base(name)
+        public Property(Colors colors, double rent, double[] housePrices, double hotelPrice, double mortgage, double houseCost, string name, int cost,Player Owner):base(name)
         {
             _colors = colors;
             _rent = rent;

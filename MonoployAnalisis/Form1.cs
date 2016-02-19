@@ -9,20 +9,43 @@ namespace MonoployAnalisis
     public partial class Form1 : Form
     {
         private GameLogic game;
+        List<Player> players = new List<Player>();
         public Form1()
         {
             InitializeComponent();
            game  = new GameLogic();
             Player player1 = new Player(Player.PlayerPiece.Car,"Carlos");
             Player player2 = new Player(Player.PlayerPiece.Dog, "Alejandro");
-            var players = new List<Player>();
             players.Add(player1);
+            players.Add(player2);
+            game.Initgame(players);
+            players[0].PurchaseProperty(new Property(Colors.Darkblue, 50, new Double[] { 50, 100, 150, 200 }, 100, 400, 100, "Villa de Toros", 250, player1));
+            players[1].PurchaseProperty(new Property(Colors.Darkblue, 50, new Double[] { 50, 100, 150, 200 }, 100, 400, 100, "Casa de Julio", 250, player2));
 
         }
 
+        private void ShowProperties(Player player,ComboBox playerProperties)
+        {
+
+            foreach (var properties in player.GetOwnedProperties)
+            {
+                playerProperties.Items.Add(properties.GetName());
+
+            }
+            playerProperties.SelectedIndex = 0;
+        }
+
+        private void GetFunds(Player player,Label funds)
+        {
+            funds.Text += player.Funds;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
+           ShowProperties(players[0],propertiesP1);
+           ShowProperties(players[1], propertiesP2);
+            GetFunds(players[0], fundsP1);
+            GetFunds(players[1], fundsP2);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -102,5 +125,7 @@ namespace MonoployAnalisis
         {
 
         }
+
+       
     }
 }
