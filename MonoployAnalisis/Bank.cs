@@ -8,7 +8,8 @@ namespace MonoployAnalisis
 {
     class Bank
     {
-        private static int GO = 200;
+        private static int _GO = 200;
+        private static int _startingFunds =  1500;
 
         public static bool TransferFunds(Player fromPlayer, Player toPlayer, int amount, bool reThrows) 
         {
@@ -27,10 +28,10 @@ namespace MonoployAnalisis
 
         public static void AddGo(Player player)
         {
-            player.AddFunds(GO);
+            player.AddFunds(_GO);
         }
 
-        public static void ChargeRent(Property property, Player player)
+        public static bool ChargeRent(Property property, Player player)
         {
            return TransferFunds(property.Owner, player, CalculateRent(property), false);
         }
@@ -44,6 +45,14 @@ namespace MonoployAnalisis
             rent += property.GetHasHotel ? property._hotelPrice : 0;
 
             return rent;
+        }
+
+        public static void InitializeStartFunds(IList<Player> players)
+        {
+            foreach(var player in players)
+            {
+                player.AddFunds(_startingFunds);
+            }
         }
     }
 }
