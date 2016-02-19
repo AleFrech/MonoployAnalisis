@@ -52,6 +52,16 @@ namespace MonoployAnalisis
             return Funds;
         }
 
+        public bool ReduceFunds(int fundsToReduce)
+        {
+            if(Funds < fundsToReduce)
+            {
+                throw new InsufficientFundsException();
+            }
+            _funds -= fundsToReduce;
+            return true;
+        }
+
         public void TransferFunds(Player receivingPlayer, int amountToTransfer)
         {
             if(Funds < amountToTransfer)
