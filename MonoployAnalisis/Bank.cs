@@ -24,5 +24,26 @@ namespace MonoployAnalisis
 
             return true;
         }
+
+        public static void AddGo(Player player)
+        {
+            player.AddFunds(GO);
+        }
+
+        public static void ChargeRent(Property property, Player player)
+        {
+           return TransferFunds(property.Owner, player, CalculateRent(property), false);
+        }
+
+
+        private static int CalculateRent(Property property)
+        {
+            int rent = 0;
+            rent += property.Cost;
+            rent += property._housePrices[property.GetHousesAmount];
+            rent += property.GetHasHotel ? property._hotelPrice : 0;
+
+            return rent;
+        }
     }
 }
