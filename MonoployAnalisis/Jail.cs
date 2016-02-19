@@ -45,23 +45,22 @@ namespace MonoployAnalisis
 
         public bool AttemptingToJail(int dice1, int dice2, Player player)
         {
-            if (dice1 == dice2)
+            if (_turnsInJail[_playerInJail.IndexOf(player)] == 0)
+            {
+                var result = Bank.ReduceFunds(player, 50,true);
+                if(result)
+                {
+                    LeaveJail(player);
+                    return true;
+                }
+            } else if (dice1 == dice2)
             {
                 LeaveJail(player);
                 return true;
             }
 
-            if (_turnsInJail[_playerInJail.IndexOf(player)] != 0)
-            {
-
-                _turnsInJail[_playerInJail.IndexOf(player)]--;
-                return false;
-            }
-
-            MessageBox.Show(player.Name + @" you have reached the max limit of turns a 50$ fee has been a credit to your bank account", @"Important Message");
-            //penalty of -50$ should be applied
-            LeaveJail(player);
-            return true;
+            _turnsInJail[_playerInJail.IndexOf(player)]--;
+            return false;
         }
     }
 }
