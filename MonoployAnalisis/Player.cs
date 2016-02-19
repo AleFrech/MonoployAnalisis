@@ -40,7 +40,7 @@ namespace MonoployAnalisis
         public Player(PlayerPiece piece, string name)
         {
             _piece = piece;
-            _funds = 500;
+            _funds = 0;
             _currentPosition = 0;
             _ownedProperties = new List<Property>();
             _name = name;
@@ -65,12 +65,12 @@ namespace MonoployAnalisis
 
         public void PurchaseProperty(Property property)
         {
-            if (Funds < property.Cost)
+            if (Funds < property._cost)
             {
                 throw new InsufficientFundsException("Not enough Funds to purchase the property");
             }
 
-            _funds -= property.Cost;
+            _funds -= property._cost;
             _ownedProperties.Add(property);
             property.Owner = this;
         }
