@@ -242,6 +242,12 @@ namespace MonoployAnalisis
         private ComboBox propertiesP2;
         private PictureBox pieceP2;
         private Label fundsP2;
+
+        private void selectPiece()
+        {
+            
+        }
+
     }
 }
 
