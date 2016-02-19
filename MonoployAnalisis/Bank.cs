@@ -59,5 +59,25 @@ namespace MonoployAnalisis
                 player.AddFunds(_startingFunds);
             }
         }
+
+        public static bool ReduceFunds(Player player, int amount, bool reThrows)
+        {
+            try
+            {
+                player.ReduceFunds(amount)
+            }
+            catch(InsufficientFundsException ex)
+            {
+                if (reThrows){ throw ex; }
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool ReduceFunds(Player player, int amount)
+        {
+            return ReduceFunds(player, amount, false);
+        }
     }
 }
