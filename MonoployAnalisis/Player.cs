@@ -10,10 +10,10 @@ namespace MonoployAnalisis
     {
         public enum PlayerPiece
         {
-            CAR,
-            DOG,
-            MONEY_BAG,
-            WHEEL_CART
+            Car,
+            Dog,
+            MoneyBag,
+            WheelCart
         };
 
         private PlayerPiece _piece;
