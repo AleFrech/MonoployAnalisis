@@ -33,10 +33,10 @@ namespace MonoployAnalisis
 
         public static void AddGo(Player player)
         {
-            player.AddFunds(_GO);
+            player.AddFunds(_go);
         }
 
-        public static bool ChargeRent(Property property, Player player)
+     /*   public static bool ChargeRent(Property property, Player player)
         {
            return TransferFunds(property.Owner, player, CalculateRent(property), false);
         }
@@ -50,7 +50,7 @@ namespace MonoployAnalisis
             rent += property.GetHasHotel ? property._hotelPrice : 0;
 
             return rent;
-        }
+        }*/
 
         public static void InitializeStartFunds(IList<Player> players)
         {
@@ -64,7 +64,7 @@ namespace MonoployAnalisis
         {
             try
             {
-                player.ReduceFunds(amount)
+                player.ReduceFunds(amount);
             }
             catch(InsufficientFundsException ex)
             {
