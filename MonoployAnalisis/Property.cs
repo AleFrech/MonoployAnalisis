@@ -23,11 +23,12 @@ namespace MonoployAnalisis
         public readonly double _hotelPrice;
         public readonly double _mortgage;
         public readonly double _houseCost;
+        public readonly double _withHotelPrice;
         public readonly int _cost;
         public Player  Owner;
         private bool _hasHotel;
         private int _housesAmount;
-        public Property(Colors colors, double rent, double[] housePrices, double hotelPrice, double mortgage, double houseCost, string name, int cost):base(name)
+        public Property(Colors colors, double rent, double[] housePrices, double hotelPrice, double mortgage, double houseCost, string name, int cost,double withHotel):base(name)
         {
             _colors = colors;
             _rent = rent;
@@ -39,6 +40,7 @@ namespace MonoployAnalisis
             _housesAmount = 0;
             _hasHotel = false;
             Owner = null;
+            _withHotelPrice = withHotel;
         }
 
         public int GetHousesAmount()

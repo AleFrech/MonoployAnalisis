@@ -19,8 +19,7 @@ namespace MonoployAnalisis
             players.Add(player1);
             players.Add(player2);
             game.Initgame(players);
-            players[0].PurchaseProperty(new Property(Colors.Darkblue, 50, new Double[] { 50, 100, 150, 200 }, 100, 400, 100, "Villa de Toros", 250));
-            players[1].PurchaseProperty(new Property(Colors.Darkblue, 50, new Double[] { 50, 100, 150, 200 }, 100, 400, 100, "Casa de Julio", 250));
+        
 
         }
        
@@ -33,6 +32,7 @@ namespace MonoployAnalisis
                 playerProperties.Items.Add(properties.GetName());
 
             }
+            if(playerProperties.Items.Count>0)
             playerProperties.SelectedIndex = 0;
         }
 

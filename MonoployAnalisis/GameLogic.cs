@@ -39,7 +39,7 @@ namespace MonoployAnalisis
             _boardSpaces.Add(new Property(Colors.Lightgreen, 26, new double[] { 130, 390,900,1100 },200,150,200, "Pacific Ave.", 300,1275));
             _boardSpaces.Add(new Property(Colors.Lightgreen, 26, new double[] { 130, 390,900,1100 },200,150,200, "North Carolina Ave.", 300,1275));
             _boardSpaces.Add(new Property(Colors.Lightgreen, 28, new double[] { 150, 450, 1000, 1200 },200,160,200, "Pennsylvania Ave.", 320,1400));
-            _boardSpaces.Add(new Property(Colors.Darkblue, 35,new double[] { 175, 500, 1100, 1300 }, 200, 175, 200, "Park Place", 350,1500);
+            _boardSpaces.Add(new Property(Colors.Darkblue, 35,new double[] { 175, 500, 1100, 1300 }, 200, 175, 200, "Park Place", 350,1500));
             _boardSpaces.Add(new Property(Colors.Darkblue, 50, new double[] { 200, 600, 1400, 1700 }, 200, 200, 200, "Boardwalk", 400,200));
 
 
