@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,6 +7,7 @@ namespace MonoployAnalisis
 { 
     partial class Form1
     {
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -111,6 +113,7 @@ namespace MonoployAnalisis
             // 
             // panelP1
             // 
+            this.pieceP1.BackColor = System.Drawing.Color.Beige;
             this.panelP1.Controls.Add(this.propertiesP1);
             this.panelP1.Controls.Add(this.nameP1);
             this.panelP1.Controls.Add(this.pieceP1);
@@ -175,6 +178,7 @@ namespace MonoployAnalisis
             // 
             // pieceP2
             // 
+            this.pieceP2.BackColor = System.Drawing.Color.Beige;
             this.pieceP2.Location = new System.Drawing.Point(17, 64);
             this.pieceP2.Name = "pieceP2";
             this.pieceP2.Size = new System.Drawing.Size(76, 69);

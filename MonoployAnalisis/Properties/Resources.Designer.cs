@@ -113,6 +113,16 @@ namespace MonoployAnalisis.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grayDice {
+            get {
+                object obj = ResourceManager.GetObject("grayDice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iron {
             get {
                 object obj = ResourceManager.GetObject("iron", resourceCulture);
@@ -246,6 +256,16 @@ namespace MonoployAnalisis.Properties {
         internal static System.Drawing.Bitmap r6 {
             get {
                 object obj = ResourceManager.GetObject("r6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap redDice {
+            get {
+                object obj = ResourceManager.GetObject("redDice", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
