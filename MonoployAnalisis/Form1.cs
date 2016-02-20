@@ -19,10 +19,11 @@ namespace MonoployAnalisis
             players.Add(player1);
             players.Add(player2);
             game.Initgame(players);
-            players[0].PurchaseProperty(new Property(Colors.Darkblue, 50, new Double[] { 50, 100, 150, 200 }, 100, 400, 100, "Villa de Toros", 250, player1));
-            players[1].PurchaseProperty(new Property(Colors.Darkblue, 50, new Double[] { 50, 100, 150, 200 }, 100, 400, 100, "Casa de Julio", 250, player2));
+            players[0].PurchaseProperty(new Property(Colors.Darkblue, 50, new Double[] { 50, 100, 150, 200 }, 100, 400, 100, "Villa de Toros", 250));
+            players[1].PurchaseProperty(new Property(Colors.Darkblue, 50, new Double[] { 50, 100, 150, 200 }, 100, 400, 100, "Casa de Julio", 250));
 
         }
+       
 
         private void ShowProperties(Player player,ComboBox playerProperties)
         {

@@ -11,8 +11,8 @@ namespace MonoployAnalisis
     public enum Colors
 
 {
-    Purple,Darkblue,Lightgreen,Lightyellow,
-    Orange,Darkyellow,Pink,Lightblue
+    Brown,Darkblue,Lightgreen,
+    Orange,Darkyellow,Pink,Lightblue,Red
 }
 
     public class Property: BoardObject
@@ -27,7 +27,7 @@ namespace MonoployAnalisis
         public Player  Owner;
         private bool _hasHotel;
         private int _housesAmount;
-        public Property(Colors colors, double rent, double[] housePrices, double hotelPrice, double mortgage, double houseCost, string name, int cost,Player Owner):base(name)
+        public Property(Colors colors, double rent, double[] housePrices, double hotelPrice, double mortgage, double houseCost, string name, int cost):base(name)
         {
             _colors = colors;
             _rent = rent;
@@ -38,7 +38,7 @@ namespace MonoployAnalisis
             _cost = cost;
             _housesAmount = 0;
             _hasHotel = false;
-            Owner = Owner;
+            Owner = null;
         }
 
         public int GetHousesAmount()
