@@ -40,7 +40,7 @@ namespace MonoployAnalisis
             int position = _currentPlayer.CurrentPosition;
             position += totalMoves;
             if(position<_boardSpaces.Count)
-            _currentPlayer.SetCurrentPosition(30);
+            _currentPlayer.SetCurrentPosition(position);
             else
                _currentPlayer.SetCurrentPosition(0);
             if (_currentPlayer.CurrentPosition == 30)
