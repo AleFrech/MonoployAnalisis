@@ -13,17 +13,17 @@ namespace MonoployAnalisis
         public Form1()
         {
             InitializeComponent();
-           game  = new GameLogic();
             Player player1 = new Player(Player.PlayerPiece.Car,"Carlos");
             Player player2 = new Player(Player.PlayerPiece.Dog, "Alejandro");
             players.Add(player1);
             players.Add(player2);
-            game.Initgame(players);
-        
+            game = new GameLogic(players);
+            game.Initgame();
+            players[0].PurchaseProperty((Property)game.GetBoardSpaces()[3]);
 
         }
-       
 
+       
         private void ShowProperties(Player player,ComboBox playerProperties)
         {
 
@@ -36,6 +36,13 @@ namespace MonoployAnalisis
             playerProperties.SelectedIndex = 0;
         }
 
+        private void RefreshFunds()
+        {
+            fundsP1.Text = "";
+            fundsP2.Text = "";
+            fundsP1.Text = "$" + players[0].Funds;
+            fundsP2.Text = "$" + players[1].Funds;
+        }
         private void GetFunds(Player player,Label funds)
         {
             funds.Text += player.Funds;
@@ -62,8 +69,9 @@ namespace MonoployAnalisis
        
         private void rollDice_Click(object sender, EventArgs e)
         {
-            int diceImage1 = game.RollDiceValueTuple().Item1;
-            int diceImage2 = game.RollDiceValueTuple().Item2;
+            var dices = game.RollDiceValueTuple();
+            int diceImage1 = dices.Item1;
+            int diceImage2 = dices.Item2;
 
             System.Diagnostics.Debug.WriteLine("value 1:" + diceImage1);
             System.Diagnostics.Debug.WriteLine("value 2:" + diceImage2);

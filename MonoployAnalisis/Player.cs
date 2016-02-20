@@ -33,6 +33,11 @@ namespace MonoployAnalisis
         {
             get { return _currentPosition; }
         }
+
+        public void SetCurrentPosition(int pos)
+        {
+            _currentPosition = pos;
+        }
         public string Name
         {
             get { return _name; }
@@ -49,6 +54,7 @@ namespace MonoployAnalisis
             _currentPosition = 0;
             _ownedProperties = new List<Property>();
             _name = name;
+            
         }
 
         public int AddFunds(int fundsToAdd)

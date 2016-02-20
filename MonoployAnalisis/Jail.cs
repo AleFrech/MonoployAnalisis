@@ -38,8 +38,8 @@ namespace MonoployAnalisis
 
         public void LeaveJail(Player player)
         {
-            _playerInJail.Remove(player);
             _turnsInJail.RemoveAt(_playerInJail.IndexOf(player));
+            _playerInJail.Remove(player);
         }
 
 
