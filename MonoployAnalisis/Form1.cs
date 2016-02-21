@@ -3,12 +3,21 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using MonoployAnalisis.Properties;
-
+using System.Collections.Generic;
 
 namespace MonoployAnalisis
 {
     public partial class Form1 : Form
     {
+
+        List<Tuple<int,int>> tupleList = new List<Tuple<int, int>>
+        {
+            Tuple.Create( 1, 2),
+            Tuple.Create( 5, 3),
+            Tuple.Create( 1, 3)
+        };
+
+
         public Form1()
         {
             InitializeComponent();
