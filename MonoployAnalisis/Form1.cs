@@ -9,7 +9,8 @@ namespace MonoployAnalisis
 {
     public partial class Form1 : Form
     {
-
+        private GameLogic game;
+        List<Player> players = new List<Player>();
         List<Tuple<int,int>> posListP1 = new List<Tuple<int, int>>
         {
             Tuple.Create( 619, 613), // 1) x,y GO 
@@ -54,6 +55,9 @@ namespace MonoployAnalisis
             Tuple.Create( 626, 515),// 40) x,y LUXURY TAX
             Tuple.Create( 626, 571),// 41) x,y BOARDWALK
         };
+
+
+      
 
         List<Tuple<int, int>> posListP2 = new List<Tuple<int, int>>
         {
@@ -101,14 +105,66 @@ namespace MonoployAnalisis
 
         };
 
+
         public Form1()
         {
             InitializeComponent();
+
+
+        
+            Player p1 = new Player();
+            PickPiece pickPiece = new PickPiece(p1);
+            pickPiece.ShowDialog();
+            players.Add(p1);
+            nameP1.Text = players[0].Name;
+            Player p2 = new Player();
+            PickPiece pickPiece2 = new PickPiece(p2);
+            pickPiece2.ShowDialog();
+            players.Add(p2);
+            nameP2.Text = players[1].Name;
+            pickPlayerPiece((int)players[0].Piece + 1, (int)players[1].Piece + 1);
+
+            game = new GameLogic(players);
+            game.Initgame();
+          
+
         }
 
+       
+
+
+
+        private void ShowProperties(Player player,ComboBox playerProperties)
+        {
+
+            foreach (var properties in player.GetOwnedProperties)
+            {
+                playerProperties.Items.Add(properties.GetName());
+
+            }
+            if(playerProperties.Items.Count>0)
+            playerProperties.SelectedIndex = 0;
+
+        }
+
+        private void RefreshFunds()
+        {
+            fundsP1.Text = "";
+            fundsP2.Text = "";
+            fundsP1.Text = "$" + players[0].Funds;
+            fundsP2.Text = "$" + players[1].Funds;
+        }
+        private void GetFunds(Player player,Label funds)
+        {
+            funds.Text += player.Funds;
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
+             ShowProperties(players[0],propertiesP1);
+             ShowProperties(players[1], propertiesP2);
+            GetFunds(players[0], fundsP1);
+            GetFunds(players[1], fundsP2);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -121,13 +177,6 @@ namespace MonoployAnalisis
 
         }
 
-        public Tuple<int, int> RollDiceValueTuple()
-        {
-            Random value = new Random();
-            int diceValue1 = value.Next(1, 6);
-            int diceValue2 = value.Next(1, 6);
-            return Tuple.Create(diceValue1, diceValue2);
-        }
 
         private void pickPlayerPiece(int getPieceP1, int getPieceP2)
         {
@@ -199,16 +248,18 @@ namespace MonoployAnalisis
         }
 
 
+     
+       
         private void rollDice_Click(object sender, EventArgs e)
         {
+            var dices = game.RollDiceValueTuple();
+            if (dices.Item1 == -1 && dices.Item2 == -1)
+                this.Close();
+            int diceImage1 = dices.Item1;
+            int diceImage2 = dices.Item2;
 
-            dice1.Image = Resources.grayDice;
-            dice2.Image = Resources.redDice;
 
-            
-            int diceImage1 = RollDiceValueTuple().Item1;
-            int diceImage2 = RollDiceValueTuple().Item2;
-
+           
             System.Diagnostics.Debug.WriteLine("value 1:" + diceImage1);
             System.Diagnostics.Debug.WriteLine("value 2:" + diceImage2);
 
@@ -264,7 +315,9 @@ namespace MonoployAnalisis
                     break;
 
             }
-            
+            RefreshFunds();
+            ShowProperties(players[0],propertiesP1);
+            ShowProperties(players[1], propertiesP2);
         }
 
 
@@ -275,14 +328,6 @@ namespace MonoployAnalisis
 
         }
 
-        private void boardPiece2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void boardPiece1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

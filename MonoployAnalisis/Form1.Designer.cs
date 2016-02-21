@@ -94,7 +94,6 @@ namespace MonoployAnalisis
             // pieceP1
             // 
             this.pieceP1.BackColor = System.Drawing.Color.Beige;
-            this.pieceP1.Image = global::MonoployAnalisis.Properties.Resources.ship;
             this.pieceP1.Location = new System.Drawing.Point(17, 64);
             this.pieceP1.Name = "pieceP1";
             this.pieceP1.Size = new System.Drawing.Size(76, 69);
@@ -109,9 +108,9 @@ namespace MonoployAnalisis
             this.fundsP1.ForeColor = System.Drawing.Color.Lime;
             this.fundsP1.Location = new System.Drawing.Point(99, 93);
             this.fundsP1.Name = "fundsP1";
-            this.fundsP1.Size = new System.Drawing.Size(102, 31);
+            this.fundsP1.Size = new System.Drawing.Size(30, 31);
             this.fundsP1.TabIndex = 4;
-            this.fundsP1.Text = "$ 1000";
+            this.fundsP1.Text = "$";
             this.fundsP1.Click += new System.EventHandler(this.fundsP1_Click);
             // 
             // panelP1
@@ -191,7 +190,6 @@ namespace MonoployAnalisis
             // pieceP2
             // 
             this.pieceP2.BackColor = System.Drawing.Color.Beige;
-            this.pieceP2.Image = global::MonoployAnalisis.Properties.Resources.fancyHat;
             this.pieceP2.Location = new System.Drawing.Point(17, 64);
             this.pieceP2.Name = "pieceP2";
             this.pieceP2.Size = new System.Drawing.Size(76, 69);
@@ -206,9 +204,9 @@ namespace MonoployAnalisis
             this.fundsP2.ForeColor = System.Drawing.Color.Lime;
             this.fundsP2.Location = new System.Drawing.Point(99, 93);
             this.fundsP2.Name = "fundsP2";
-            this.fundsP2.Size = new System.Drawing.Size(102, 31);
+            this.fundsP2.Size = new System.Drawing.Size(30, 31);
             this.fundsP2.TabIndex = 4;
-            this.fundsP2.Text = "$ 1000";
+            this.fundsP2.Text = "$";
             // 
             // boardPiece1
             // 
@@ -217,7 +215,6 @@ namespace MonoployAnalisis
             this.boardPiece1.Size = new System.Drawing.Size(30, 30);
             this.boardPiece1.TabIndex = 15;
             this.boardPiece1.TabStop = false;
-            this.boardPiece1.Click += new System.EventHandler(this.boardPiece1_Click);
             // 
             // boardPiece2
             // 
@@ -226,13 +223,12 @@ namespace MonoployAnalisis
             this.boardPiece2.Size = new System.Drawing.Size(30, 30);
             this.boardPiece2.TabIndex = 16;
             this.boardPiece2.TabStop = false;
-            this.boardPiece2.Click += new System.EventHandler(this.boardPiece2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 742);
+            this.ClientSize = new System.Drawing.Size(1350, 741);
             this.Controls.Add(this.boardPiece2);
             this.Controls.Add(this.boardPiece1);
             this.Controls.Add(this.panelP2);

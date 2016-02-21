@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace MonoployAnalisis
 {
-    public class SuperTax : BoardObject
+    public class Go:BoardObject
     {
-        public SuperTax() : base("Luxury Tax")
+        public Go() : base("Go")
         {
-
+            
         }
 
-        public bool ChargeSuper(Player player)
+
+        public void AddGo(Player player)
         {
-            return Bank.ReduceFunds(player, 100,true);
+            Bank.AddGo(player);
         }
     }
 }
