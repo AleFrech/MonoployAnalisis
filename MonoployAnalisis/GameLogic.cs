@@ -44,7 +44,7 @@ namespace MonoployAnalisis
                 int position = _currentPlayer.CurrentPosition;
                 position += totalMoves;
                 if (position < _boardSpaces.Count)
-                    _currentPlayer.SetCurrentPosition(4);
+                    _currentPlayer.SetCurrentPosition(position);
                 else
                     _currentPlayer.SetCurrentPosition(0);
 
@@ -59,6 +59,10 @@ namespace MonoployAnalisis
                 if (_currentPlayer.CurrentPosition == 4)
                 {
                     ((IncomeTax) _boardSpaces[4]).ChargeIncome(_currentPlayer);
+                }
+                if (_currentPlayer.CurrentPosition == 38)
+                {
+                    ((SuperTax)_boardSpaces[38]).ChargeSuper(_currentPlayer);
                 }
 
                 if (!isDouble)
@@ -121,7 +125,7 @@ namespace MonoployAnalisis
             _boardSpaces.Add(new BoardObject("Short Line Train"));
             _boardSpaces.Add(new BoardObject("Chance"));
             _boardSpaces.Add(new Property(Colors.Darkblue, 35,new double[] { 175, 500, 1100, 1300 }, 200, 175, 200, "Park Place", 350,1500));
-            _boardSpaces.Add(new BoardObject("Luxury Tax"));
+            _boardSpaces.Add(new SuperTax());
             _boardSpaces.Add(new Property(Colors.Darkblue, 50, new double[] { 200, 600, 1400, 1700 }, 200, 200, 200, "Boardwalk", 400,200));
 
 
@@ -155,11 +159,9 @@ namespace MonoployAnalisis
             {
                 return Tuple.Create(-1, -1);
             }
-            else
-            {
+           
                 return Tuple.Create(diceValue1, diceValue2);
-            }
-
+         
         }
 
     }

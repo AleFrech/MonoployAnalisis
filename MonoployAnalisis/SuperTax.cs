@@ -8,7 +8,7 @@ namespace MonoployAnalisis
 {
     public class SuperTax : BoardObject
     {
-        public SuperTax() : base("Super Tax")
+        public SuperTax() : base("Luxury Tax")
         {
 
         }
