@@ -128,6 +128,7 @@ namespace MonoployAnalisis
                     break;
 
             }
+            RefreshFunds();
         }
 
         private void fundsP1_Click(object sender, EventArgs e)

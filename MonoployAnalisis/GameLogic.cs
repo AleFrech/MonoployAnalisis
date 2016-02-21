@@ -40,9 +40,14 @@ namespace MonoployAnalisis
             int position = _currentPlayer.CurrentPosition;
             position += totalMoves;
             if(position<_boardSpaces.Count)
-            _currentPlayer.SetCurrentPosition(position);
+            _currentPlayer.SetCurrentPosition(30);
             else
                _currentPlayer.SetCurrentPosition(0);
+
+            if (_boardSpaces[_currentPlayer.CurrentPosition] is Property)
+            {
+                
+            }
             if (_currentPlayer.CurrentPosition == 30)
             {
                ((Jail)_boardSpaces[10]).GoToJail(_currentPlayer);
@@ -56,7 +61,7 @@ namespace MonoployAnalisis
         }
         private void InitProperties()
         {
-            _boardSpaces.Add(new BoardObject("Go"));
+            _boardSpaces.Add(new Go());
             _boardSpaces.Add(new Property(Colors.Brown,2,new double[] {10,30,90,160},50 ,30 ,50 , "Mediterranean Ave.",60,250));
             _boardSpaces.Add(new BoardObject("Comunity Chest"));
             _boardSpaces.Add(new Property(Colors.Brown, 4, new double[] { 20, 60, 180,320 },50,30,50, "Baltic Ave.", 60,450));
@@ -116,11 +121,16 @@ namespace MonoployAnalisis
             {
                OutOfJail= ((Jail) _boardSpaces[10]).AttemptingToJail(diceValue1, diceValue2, _currentPlayer);
             }
-            if(OutOfJail)
-            Move(diceValue1==diceValue2,diceValue1+diceValue2);
+            if (OutOfJail)
+            {
+                Move(diceValue1 == diceValue2, diceValue1 + diceValue2);
+            }
             else
-            NextTurn();
+            {
+                NextTurn();
+            }
             return Tuple.Create(diceValue1, diceValue2);
+
         }
 
     }

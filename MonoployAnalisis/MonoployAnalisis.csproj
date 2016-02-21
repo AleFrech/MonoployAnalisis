@@ -54,8 +54,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-
     <Compile Include="GameLogic.cs" />
+    <Compile Include="Go.cs" />
     <Compile Include="IncomeTax.cs" />
     <Compile Include="InsufficientFundsException.cs" />
     <Compile Include="Player.cs" />
