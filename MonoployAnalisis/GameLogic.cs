@@ -48,12 +48,12 @@ namespace MonoployAnalisis
                 else
                     _currentPlayer.SetCurrentPosition(0);
 
-                if (_boardSpaces[_currentPlayer.CurrentPosition] is Property)
+                if (_boardSpaces[_currentPlayer.CurrentPosition] is Property && ((Property)_boardSpaces[_currentPlayer.CurrentPosition]).Owner==null)
                 {
                     DialogResult dialogResult = MessageBox.Show("Do you want to buy " + _boardSpaces[_currentPlayer.CurrentPosition].GetName()+"?", "Buy Property", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        //do something
+                       _currentPlayer.PurchaseProperty((Property)_boardSpaces[_currentPlayer.CurrentPosition]);
                     }
                     else if (dialogResult == DialogResult.No)
                     {
