@@ -317,37 +317,28 @@ namespace MonoployAnalisis
         }
         public void MovePlayerInBoard(Player player1, Player player2)
         {
+
+            //Player 1 move
             int posPlayer1 = player1.CurrentPosition;
-            int posPlayer2 = player2.CurrentPosition;
-
             Tuple<int, int> posValuesP1 = posListP1[posPlayer1];
-            Tuple<int, int> posValuesP2 = posListP1[posPlayer2];
-
             if (posPlayer1 == 30)
             {
                 posValuesP1 = posListP1[40];
             }
+            int player1X = posValuesP1.Item1;
+            int player1Y = posValuesP1.Item2;
+            this.boardPiece1.Location = new System.Drawing.Point(player1X, player1Y);
 
+            //Player 2 move
+            int posPlayer2 = player2.CurrentPosition;
+            Tuple<int, int> posValuesP2 = posListP2[posPlayer2];
             if (posPlayer2 == 30)
             {
                 posValuesP2 = posListP2[40];
             }
-
-
-            int player1X = posValuesP1.Item1;
-            int player1Y = posValuesP1.Item2;
-
             int player2X = posValuesP2.Item1;
             int player2Y = posValuesP2.Item2;
-
-            if (player1 == players[0] )
-            {
-                this.boardPiece1.Location = new System.Drawing.Point(player1X, player1Y);
-            }
-            else if (player2 == players[1])
-            {
-                this.boardPiece2.Location = new System.Drawing.Point(player2X, player2Y);
-            }
+            this.boardPiece2.Location = new System.Drawing.Point(player2X, player2Y);
             
         }
     }
