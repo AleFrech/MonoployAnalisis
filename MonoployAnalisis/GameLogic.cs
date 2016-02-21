@@ -39,10 +39,14 @@ namespace MonoployAnalisis
                 int position = _currentPlayer.CurrentPosition;
                 position += totalMoves;
                 if (position < _boardSpaces.Count)
+                {
                     _currentPlayer.SetCurrentPosition(position);
+                }
                 else
-                    _currentPlayer.SetCurrentPosition(0);
-
+                {
+                    _currentPlayer.SetCurrentPosition(position-_boardSpaces.Count);
+                    Bank.AddGo(_currentPlayer);
+                }
                 if (_boardSpaces[_currentPlayer.CurrentPosition] is Property && ((Property)_boardSpaces[_currentPlayer.CurrentPosition]).Owner==null)
                 {
                     DialogResult dialogResult = MessageBox.Show("Do you want to buy " + _boardSpaces[_currentPlayer.CurrentPosition].GetName()+"?", "Buy Property", MessageBoxButtons.YesNo);
@@ -54,10 +58,19 @@ namespace MonoployAnalisis
                     {
                         //do something else
                     }
+                }else if (_boardSpaces[_currentPlayer.CurrentPosition] is Property && ((Property)_boardSpaces[_currentPlayer.CurrentPosition]).Owner != null)
+                {
+                    if(((Property)_boardSpaces[_currentPlayer.CurrentPosition]).Owner != _currentPlayer)
+                    {
+                     
+                        _currentPlayer.TransferFunds(((Property)_boardSpaces[_currentPlayer.CurrentPosition]).Owner, (int)((Property)_boardSpaces[_currentPlayer.CurrentPosition])._rent);
+                      
+                    }
                 }
                 if (_currentPlayer.CurrentPosition == 30)
                 {
                     ((Jail) _boardSpaces[10]).GoToJail(_currentPlayer);
+                    _currentPlayer.SetCurrentPosition(10);
                 }
                 if (_currentPlayer.CurrentPosition == 4)
                 {

@@ -126,7 +126,10 @@ namespace MonoployAnalisis
 
             game = new GameLogic(players);
             game.Initgame();
-          
+            ShowProperties(players[0], propertiesP1);
+            ShowProperties(players[1], propertiesP2);
+            GetFunds(players[0], fundsP1);
+            GetFunds(players[1], fundsP2);
 
         }
         private void ShowProperties(Player player,ComboBox playerProperties)
@@ -153,14 +156,7 @@ namespace MonoployAnalisis
         {
             funds.Text += player.Funds;
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-             ShowProperties(players[0],propertiesP1);
-             ShowProperties(players[1], propertiesP2);
-            GetFunds(players[0], fundsP1);
-            GetFunds(players[1], fundsP2);
-        }
+      
         private void pickPlayerPiece(int getPieceP1, int getPieceP2)
         {
             
