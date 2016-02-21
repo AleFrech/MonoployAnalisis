@@ -137,6 +137,8 @@ namespace MonoployAnalisis
         private void ShowProperties(Player player,ComboBox playerProperties)
         {
 
+            playerProperties.Items.Clear();
+
             foreach (var properties in player.GetOwnedProperties)
             {
                 playerProperties.Items.Add(properties.GetName());
