@@ -71,7 +71,6 @@ namespace MonoployAnalisis
             this.board.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.board.TabIndex = 0;
             this.board.TabStop = false;
-            this.board.Click += new System.EventHandler(this.board_Click);
             // 
             // nameP1
             // 
@@ -112,7 +111,6 @@ namespace MonoployAnalisis
             this.fundsP1.Size = new System.Drawing.Size(102, 31);
             this.fundsP1.TabIndex = 4;
             this.fundsP1.Text = "$ 1000";
-            this.fundsP1.Click += new System.EventHandler(this.fundsP1_Click);
             // 
             // panelP1
             // 
@@ -125,7 +123,6 @@ namespace MonoployAnalisis
             this.panelP1.Name = "panelP1";
             this.panelP1.Size = new System.Drawing.Size(223, 146);
             this.panelP1.TabIndex = 9;
-            this.panelP1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // dice1
             // 
@@ -217,7 +214,6 @@ namespace MonoployAnalisis
             this.boardPiece1.Size = new System.Drawing.Size(30, 30);
             this.boardPiece1.TabIndex = 15;
             this.boardPiece1.TabStop = false;
-            this.boardPiece1.Click += new System.EventHandler(this.boardPiece1_Click);
             // 
             // boardPiece2
             // 
@@ -226,7 +222,6 @@ namespace MonoployAnalisis
             this.boardPiece2.Size = new System.Drawing.Size(30, 30);
             this.boardPiece2.TabIndex = 16;
             this.boardPiece2.TabStop = false;
-            this.boardPiece2.Click += new System.EventHandler(this.boardPiece2_Click);
             // 
             // Form1
             // 
@@ -244,7 +239,6 @@ namespace MonoployAnalisis
             this.Name = "Form1";
             this.Text = "Monopoly";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.board)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pieceP1)).EndInit();
             this.panelP1.ResumeLayout(false);
