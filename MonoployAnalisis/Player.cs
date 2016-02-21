@@ -46,6 +46,11 @@ namespace MonoployAnalisis
             _name = name;
         }
 
+        public Player() : Player(null, "")
+        {
+            
+        }
+
         public int AddFunds(int fundsToAdd)
         {
             _funds += fundsToAdd;
