@@ -24,6 +24,7 @@ namespace MonoployAnalisis
         public PlayerPiece Piece
         {
             get { return this._piece; }
+            set { _piece = value; }
         }
         public int Funds
         {
@@ -36,6 +37,7 @@ namespace MonoployAnalisis
         public string Name
         {
             get { return _name; }
+            set { _name = value; }
         }
         public Player(PlayerPiece piece, string name)
         {
