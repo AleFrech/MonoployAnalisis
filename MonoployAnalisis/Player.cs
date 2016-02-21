@@ -11,8 +11,12 @@ namespace MonoployAnalisis
         public enum PlayerPiece
         {
             Car,
+            Dedal,
             Dog,
-            MoneyBag,
+            Hat,
+            Iron,
+            Oldboot,
+            Ship,
             WheelCart
         };
 
@@ -24,6 +28,16 @@ namespace MonoployAnalisis
         public PlayerPiece Piece
         {
             get { return this._piece; }
+        }
+
+        public void SetPiece(PlayerPiece piece)
+        {
+            this._piece = piece;
+        }
+
+        public void SetName(string name)
+        {
+            this._name = name;
         }
         public int Funds
         {
@@ -37,13 +51,12 @@ namespace MonoployAnalisis
         {
             get { return _name; }
         }
-        public Player(PlayerPiece piece, string name)
+
+        public Player()
         {
-            _piece = piece;
             _funds = 0;
             _currentPosition = 0;
             _ownedProperties = new List<Property>();
-            _name = name;
         }
 
         public int AddFunds(int fundsToAdd)
