@@ -49,8 +49,10 @@ namespace MonoployAnalisis
             this.propertiesP2 = new System.Windows.Forms.ComboBox();
             this.pieceP2 = new System.Windows.Forms.PictureBox();
             this.fundsP2 = new System.Windows.Forms.Label();
+
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+
             ((System.ComponentModel.ISupportInitialize)(this.board)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pieceP1)).BeginInit();
             this.panelP1.SuspendLayout();
@@ -108,9 +110,9 @@ namespace MonoployAnalisis
             this.fundsP1.ForeColor = System.Drawing.Color.Lime;
             this.fundsP1.Location = new System.Drawing.Point(99, 93);
             this.fundsP1.Name = "fundsP1";
-            this.fundsP1.Size = new System.Drawing.Size(102, 31);
+            this.fundsP1.Size = new System.Drawing.Size(30, 31);
             this.fundsP1.TabIndex = 4;
-            this.fundsP1.Text = "$ 1000";
+            this.fundsP1.Text = "$";
             this.fundsP1.Click += new System.EventHandler(this.fundsP1_Click);
             // 
             // panelP1
@@ -204,8 +206,9 @@ namespace MonoployAnalisis
             this.fundsP2.ForeColor = System.Drawing.Color.Lime;
             this.fundsP2.Location = new System.Drawing.Point(99, 93);
             this.fundsP2.Name = "fundsP2";
-            this.fundsP2.Size = new System.Drawing.Size(102, 31);
+            this.fundsP2.Size = new System.Drawing.Size(30, 31);
             this.fundsP2.TabIndex = 4;
+
             this.fundsP2.Text = "$ 1000";
             // 
             // pictureBox2
@@ -223,14 +226,19 @@ namespace MonoployAnalisis
             this.pictureBox1.Size = new System.Drawing.Size(31, 29);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
+
+            this.fundsP2.Text = "$";
+
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 741);
+
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
+
             this.Controls.Add(this.panelP2);
             this.Controls.Add(this.rollDice);
             this.Controls.Add(this.dice2);

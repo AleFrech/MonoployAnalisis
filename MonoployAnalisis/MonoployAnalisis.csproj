@@ -55,6 +55,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GameLogic.cs" />
+    <Compile Include="Go.cs" />
     <Compile Include="IncomeTax.cs" />
     <Compile Include="InsufficientFundsException.cs" />
     <Compile Include="PickPiece.cs">
@@ -64,6 +65,7 @@
       <DependentUpon>PickPiece.cs</DependentUpon>
     </Compile>
     <Compile Include="Player.cs" />
+    <Compile Include="Jail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

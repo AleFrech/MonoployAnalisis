@@ -47,16 +47,26 @@ namespace MonoployAnalisis
         {
             get { return _currentPosition; }
         }
+
+        public void SetCurrentPosition(int pos)
+        {
+            _currentPosition = pos;
+        }
         public string Name
         {
             get { return _name; }
         }
-
+        public IList<Property> GetOwnedProperties
+        {
+            get { return _ownedProperties; }
+        }
         public Player()
+
         {
             _funds = 0;
             _currentPosition = 0;
             _ownedProperties = new List<Property>();
+
         }
 
         public int AddFunds(int fundsToAdd)
@@ -86,7 +96,7 @@ namespace MonoployAnalisis
             receivingPlayer.AddFunds(amountToTransfer);
         }
 
-       /* public void PurchaseProperty(Property property)
+        public void PurchaseProperty(Property property)
         {
             if (Funds < property._cost)
             {
@@ -96,6 +106,6 @@ namespace MonoployAnalisis
             _funds -= property._cost;
             _ownedProperties.Add(property);
             property.Owner = this;
-        }*/
+        }
     }
 }
