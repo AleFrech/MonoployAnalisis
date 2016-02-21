@@ -161,8 +161,8 @@ namespace MonoployAnalisis
         private void Form1_Load(object sender, EventArgs e)
         {
 
-           ShowProperties(players[0],propertiesP1);
-           ShowProperties(players[1], propertiesP2);
+             ShowProperties(players[0],propertiesP1);
+             ShowProperties(players[1], propertiesP2);
             GetFunds(players[0], fundsP1);
             GetFunds(players[1], fundsP2);
         }
@@ -316,7 +316,8 @@ namespace MonoployAnalisis
 
             }
             RefreshFunds();
-            
+            ShowProperties(players[0],propertiesP1);
+            ShowProperties(players[1], propertiesP2);
         }
 
 
