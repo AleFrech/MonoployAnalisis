@@ -148,8 +148,8 @@ namespace MonoployAnalisis
         public Tuple<int, int> RollDiceValueTuple()
         {
             Random value = new Random();
-            int diceValue1 = value.Next(1, 6);
-            int diceValue2 = value.Next(1, 6);
+            int diceValue1 = value.Next(1, 7);
+            int diceValue2 = value.Next(1, 7);
             bool OutOfJail = true;
             if (((Jail) _boardSpaces[10]).PlayerIsInJail(_currentPlayer))
             {
