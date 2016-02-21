@@ -94,7 +94,6 @@ namespace MonoployAnalisis
             // pieceP1
             // 
             this.pieceP1.BackColor = System.Drawing.Color.Beige;
-            this.pieceP1.Image = global::MonoployAnalisis.Properties.Resources.ship;
             this.pieceP1.Location = new System.Drawing.Point(17, 64);
             this.pieceP1.Name = "pieceP1";
             this.pieceP1.Size = new System.Drawing.Size(76, 69);
@@ -191,7 +190,6 @@ namespace MonoployAnalisis
             // pieceP2
             // 
             this.pieceP2.BackColor = System.Drawing.Color.Beige;
-            this.pieceP2.Image = global::MonoployAnalisis.Properties.Resources.fancyHat;
             this.pieceP2.Location = new System.Drawing.Point(17, 64);
             this.pieceP2.Name = "pieceP2";
             this.pieceP2.Size = new System.Drawing.Size(76, 69);
@@ -230,7 +228,7 @@ namespace MonoployAnalisis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 742);
+            this.ClientSize = new System.Drawing.Size(1350, 741);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panelP2);

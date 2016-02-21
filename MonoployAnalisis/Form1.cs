@@ -29,15 +29,16 @@ namespace MonoployAnalisis
         {
             List<Player> players = new List<Player>();
             Player p1 = new Player();
-            PickPiece pickPiece  = new PickPiece(p1,pieceP1);
+            PickPiece pickPiece  = new PickPiece(p1);
             pickPiece.ShowDialog();
             players.Add(p1);
             nameP1.Text = players[0].Name;
             Player p2 = new Player();
-            PickPiece pickPiece2 = new PickPiece(p2, pieceP2);
+            PickPiece pickPiece2 = new PickPiece(p2);
             pickPiece2.ShowDialog();
             players.Add(p2);
             nameP2.Text = players[1].Name;
+            pickPlayerPiece((int)players[0].Piece+1,(int)players[1].Piece+1);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

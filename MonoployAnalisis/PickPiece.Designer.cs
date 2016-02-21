@@ -188,6 +188,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PickPiece";
             this.Text = "PickPiece";
+            this.Load += new System.EventHandler(this.PickPiece_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pieceP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
