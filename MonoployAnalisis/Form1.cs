@@ -10,13 +10,96 @@ namespace MonoployAnalisis
     public partial class Form1 : Form
     {
 
-        List<Tuple<int,int>> tupleList = new List<Tuple<int, int>>
+        List<Tuple<int,int>> posListP1 = new List<Tuple<int, int>>
         {
-            Tuple.Create( 1, 2),
-            Tuple.Create( 5, 3),
-            Tuple.Create( 1, 3)
+            Tuple.Create( 619, 613), // 1) x,y GO 
+            Tuple.Create( 552, 626), // 2) x,y MEDITERRANEAN AVENUE
+            Tuple.Create( 496, 620),// 03) x,y COMUNITY CHEST
+            Tuple.Create( 440, 626),// 04) x,y BALTIC AVENUE
+            Tuple.Create( 387, 620),// 05) x,y INCOME TAX
+            Tuple.Create( 330, 620),// 06) x,y READING RAILROAD
+            Tuple.Create( 273, 627),// 07) x,y ORIENTAL AVENUE
+            Tuple.Create( 221, 620),// 08) x,y CHANCE
+            Tuple.Create( 162, 627),// 09) x,y VERMONT AVENUE
+            Tuple.Create( 105, 628),// 10) x,y CONNECTICUT AVENUE
+            Tuple.Create(  39, 605),// 11) x,y IN JAIL
+            Tuple.Create(  12, 625),// 12) x,y OUT JAIL
+            Tuple.Create(  47, 551),// 13) x,y ST. CHARLES PLACE
+            Tuple.Create(  52, 496),// 14) x,y ELECTRIC COMPANY
+            Tuple.Create(  47, 439),// 15) x,y STATES AVENUE
+            Tuple.Create(  48, 384),// 16) x,y VIRGINIA AVENUE
+            Tuple.Create(  56, 330),// 17) x,y PENNSYLVANIA RAILROAD
+            Tuple.Create(  46, 272),// 18) x,y ST. JAMES PLACE
+            Tuple.Create(  56, 217),// 19) x,y COMMUNITY CHEST
+            Tuple.Create(  47, 161),// 20) x,y TENNESSEE AVENUE
+            Tuple.Create(  46, 105),// 21) x,y NEW YORK AVENUE
+            Tuple.Create(  60,  22),// 22) x,y FREE PARKING
+            Tuple.Create( 124,  15),// 23) x,y KENTUCKY AVENUE
+            Tuple.Create( 178,  21),// 24) x,y CHANCE
+            Tuple.Create( 235,  15),// 25) x,y INDIANA AVENUE
+            Tuple.Create( 290,  15),// 26) x,y ILLINOIS AVENUE
+            Tuple.Create( 348,  23),// 27) x,y B & O RAILROAD
+            Tuple.Create( 404,  15),// 28) x,y ATLANTIC AVENUE
+            Tuple.Create( 458,  15),// 29) x,y VENTNOR AVENUE
+            Tuple.Create( 515,  24),// 30) x,y WATER WORKS
+            Tuple.Create( 640,  28),// 31) x,y MARVIN GARDENS
+            Tuple.Create( 618, 52),// 32) x,y GO TO JAIL
+            Tuple.Create( 626, 125),// 33) x,y PACIFIC AVENUE
+            Tuple.Create( 626, 181),// 34) x,y NORTH CAROLINA AVENUE
+            Tuple.Create( 626, 236),// 35) x,y COMMUNITY CHEST
+            Tuple.Create( 626, 291),// 36) x,y PENNSYLVANIA RAILROAD
+            Tuple.Create( 626, 347),// 37) x,y SHORT LINE
+            Tuple.Create( 626, 403),// 38) x,y CHANCE
+            Tuple.Create( 626, 460),// 39) x,y PARK PLACE
+            Tuple.Create( 626, 515),// 40) x,y LUXURY TAX
+            Tuple.Create( 626, 571),// 41) x,y BOARDWALK
         };
 
+        List<Tuple<int, int>> posListP2 = new List<Tuple<int, int>>
+        {
+            Tuple.Create( 635, 646), // 1) x,y GO 
+            Tuple.Create( 568, 659), // 2) x,y MEDITERRANEAN AVENUE
+            Tuple.Create( 512, 653),// 03) x,y COMUNITY CHEST
+            Tuple.Create( 456, 659),// 04) x,y BALTIC AVENUE
+            Tuple.Create( 403, 653),// 05) x,y INCOME TAX
+            Tuple.Create( 346, 653),// 06) x,y READING RAILROAD
+            Tuple.Create( 289, 660),// 07) x,y ORIENTAL AVENUE
+            Tuple.Create( 237, 653),// 08) x,y CHANCE
+            Tuple.Create( 178, 660),// 09) x,y VERMONT AVENUE
+            Tuple.Create( 121, 661),// 10) x,y CONNECTICUT AVENUE
+            Tuple.Create(  68, 635),// 11) x,y IN JAIL
+            Tuple.Create(  54, 662),// 12) x,y OUT JAIL
+            Tuple.Create(  16, 569),// 13) x,y ST. CHARLES PLACE
+            Tuple.Create(  21, 514),// 14) x,y ELECTRIC COMPANY
+            Tuple.Create(  16, 457),// 15) x,y STATES AVENUE
+            Tuple.Create(  17, 402),// 16) x,y VIRGINIA AVENUE
+            Tuple.Create(  25, 348),// 17) x,y PENNSYLVANIA RAILROAD
+            Tuple.Create(  15, 290),// 18) x,y ST. JAMES PLACE
+            Tuple.Create(  25, 235),// 19) x,y COMMUNITY CHEST
+            Tuple.Create(  16, 179),// 20) x,y TENNESSEE AVENUE
+            Tuple.Create(  15, 123),// 21) x,y NEW YORK AVENUE
+            Tuple.Create(  26,  61),// 22) x,y FREE PARKING
+            Tuple.Create( 105,  48),// 23) x,y KENTUCKY AVENUE
+            Tuple.Create( 159,  54),// 24) x,y CHANCE
+            Tuple.Create( 216,  48),// 25) x,y INDIANA AVENUE
+            Tuple.Create( 271,  48),// 26) x,y ILLINOIS AVENUE
+            Tuple.Create( 329,  56),// 27) x,y B & O RAILROAD
+            Tuple.Create( 385,  48),// 28) x,y ATLANTIC AVENUE
+            Tuple.Create( 439,  48),// 29) x,y VENTNOR AVENUE
+            Tuple.Create( 496,  57),// 30) x,y WATER WORKS
+            Tuple.Create( 551,  49),// 31) x,y MARVIN GARDENS
+            Tuple.Create( 654,  22),// 32) x,y GO TO JAIL
+            Tuple.Create( 658, 104),// 33) x,y PACIFIC AVENUE
+            Tuple.Create( 658, 160),// 34) x,y NORTH CAROLINA AVENUE
+            Tuple.Create( 658, 215),// 35) x,y COMMUNITY CHEST
+            Tuple.Create( 658, 270),// 36) x,y PENNSYLVANIA RAILROAD
+            Tuple.Create( 658, 326),// 37) x,y SHORT LINE
+            Tuple.Create( 658, 382),// 38) x,y CHANCE
+            Tuple.Create( 658, 439),// 39) x,y PARK PLACE
+            Tuple.Create( 658, 494),// 40) x,y LUXURY TAX
+            Tuple.Create( 658, 550),// 41) x,y BOARDWALK
+
+        };
 
         public Form1()
         {
@@ -188,6 +271,16 @@ namespace MonoployAnalisis
 
 
         private void fundsP1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boardPiece2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void boardPiece1_Click(object sender, EventArgs e)
         {
 
         }

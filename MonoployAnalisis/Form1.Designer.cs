@@ -49,8 +49,8 @@ namespace MonoployAnalisis
             this.propertiesP2 = new System.Windows.Forms.ComboBox();
             this.pieceP2 = new System.Windows.Forms.PictureBox();
             this.fundsP2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.boardPiece1 = new System.Windows.Forms.PictureBox();
+            this.boardPiece2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.board)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pieceP1)).BeginInit();
             this.panelP1.SuspendLayout();
@@ -58,8 +58,8 @@ namespace MonoployAnalisis
             ((System.ComponentModel.ISupportInitialize)(this.dice2)).BeginInit();
             this.panelP2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pieceP2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boardPiece1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boardPiece2)).BeginInit();
             this.SuspendLayout();
             // 
             // board
@@ -210,29 +210,31 @@ namespace MonoployAnalisis
             this.fundsP2.TabIndex = 4;
             this.fundsP2.Text = "$ 1000";
             // 
-            // pictureBox2
+            // boardPiece1
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(551, 627);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(31, 29);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
+            this.boardPiece1.Location = new System.Drawing.Point(619, 613);
+            this.boardPiece1.Name = "boardPiece1";
+            this.boardPiece1.Size = new System.Drawing.Size(30, 30);
+            this.boardPiece1.TabIndex = 15;
+            this.boardPiece1.TabStop = false;
+            this.boardPiece1.Click += new System.EventHandler(this.boardPiece1_Click);
             // 
-            // pictureBox1
+            // boardPiece2
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(567, 660);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 29);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.boardPiece2.Location = new System.Drawing.Point(635, 646);
+            this.boardPiece2.Name = "boardPiece2";
+            this.boardPiece2.Size = new System.Drawing.Size(30, 30);
+            this.boardPiece2.TabIndex = 16;
+            this.boardPiece2.TabStop = false;
+            this.boardPiece2.Click += new System.EventHandler(this.boardPiece2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 742);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.boardPiece2);
+            this.Controls.Add(this.boardPiece1);
             this.Controls.Add(this.panelP2);
             this.Controls.Add(this.rollDice);
             this.Controls.Add(this.dice2);
@@ -252,8 +254,8 @@ namespace MonoployAnalisis
             this.panelP2.ResumeLayout(false);
             this.panelP2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pieceP2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boardPiece1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boardPiece2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,8 +352,8 @@ namespace MonoployAnalisis
             return dialogResult;
         }
 
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
+        private PictureBox boardPiece1;
+        private PictureBox boardPiece2;
 
         //40 casillas
 
