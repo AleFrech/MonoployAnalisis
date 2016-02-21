@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MonoployAnalisis
 {
@@ -10,7 +11,8 @@ namespace MonoployAnalisis
     {
         private List<BoardObject> _boardSpaces;
         private Player _currentPlayer;
-        private List<Player> _players;  
+        private List<Player> _players;
+        private bool gameOver = false;
         public GameLogic(List<Player> players )
         {
             _boardSpaces = new List<BoardObject>();
@@ -37,23 +39,43 @@ namespace MonoployAnalisis
 
         public void Move(bool isDouble,int totalMoves)
         {
-            int position = _currentPlayer.CurrentPosition;
-            position += totalMoves;
-            if(position<_boardSpaces.Count)
-            _currentPlayer.SetCurrentPosition(30);
-            else
-               _currentPlayer.SetCurrentPosition(0);
+            try
+            {
+                int position = _currentPlayer.CurrentPosition;
+                position += totalMoves;
+                if (position < _boardSpaces.Count)
+                    _currentPlayer.SetCurrentPosition(4);
+                else
+                    _currentPlayer.SetCurrentPosition(0);
 
-            if (_boardSpaces[_currentPlayer.CurrentPosition] is Property)
-            {
-                
+                if (_boardSpaces[_currentPlayer.CurrentPosition] is Property)
+                {
+
+                }
+                if (_currentPlayer.CurrentPosition == 30)
+                {
+                    ((Jail) _boardSpaces[10]).GoToJail(_currentPlayer);
+                }
+                if (_currentPlayer.CurrentPosition == 4)
+                {
+                    ((IncomeTax) _boardSpaces[4]).ChargeIncome(_currentPlayer);
+                }
+
+                if (!isDouble)
+                    NextTurn();
             }
-            if (_currentPlayer.CurrentPosition == 30)
+            catch (InsufficientFundsException ex)
             {
-               ((Jail)_boardSpaces[10]).GoToJail(_currentPlayer);
+                if (_currentPlayer == _players[0])
+                {
+                    MessageBox.Show(_players[1].Name + " Just won this game! ");
+                }else if (_currentPlayer == _players[1])
+                {
+                    MessageBox.Show(_players[0].Name + " Just won this game! ");
+                }
+                gameOver = true;
+
             }
-            if(!isDouble)
-                NextTurn();
         }
         public List<BoardObject>GetBoardSpaces()
         {
@@ -65,7 +87,7 @@ namespace MonoployAnalisis
             _boardSpaces.Add(new Property(Colors.Brown,2,new double[] {10,30,90,160},50 ,30 ,50 , "Mediterranean Ave.",60,250));
             _boardSpaces.Add(new BoardObject("Comunity Chest"));
             _boardSpaces.Add(new Property(Colors.Brown, 4, new double[] { 20, 60, 180,320 },50,30,50, "Baltic Ave.", 60,450));
-            _boardSpaces.Add(new BoardObject("Income Tax"));
+            _boardSpaces.Add(new IncomeTax());
             _boardSpaces.Add(new BoardObject("Reading Train"));
             _boardSpaces.Add(new Property(Colors.Lightblue, 6, new double[] { 30, 90, 270, 400 }, 50,50,50, "Oriental Ave.", 100,550));
             _boardSpaces.Add(new BoardObject("Chance"));
@@ -129,7 +151,14 @@ namespace MonoployAnalisis
             {
                 NextTurn();
             }
-            return Tuple.Create(diceValue1, diceValue2);
+            if (gameOver)
+            {
+                return Tuple.Create(-1, -1);
+            }
+            else
+            {
+                return Tuple.Create(diceValue1, diceValue2);
+            }
 
         }
 

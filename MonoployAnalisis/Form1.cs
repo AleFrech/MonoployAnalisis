@@ -70,9 +70,12 @@ namespace MonoployAnalisis
         private void rollDice_Click(object sender, EventArgs e)
         {
             var dices = game.RollDiceValueTuple();
+            if (dices.Item1 == -1 && dices.Item2 == -1)
+                this.Close();
             int diceImage1 = dices.Item1;
             int diceImage2 = dices.Item2;
 
+           
             System.Diagnostics.Debug.WriteLine("value 1:" + diceImage1);
             System.Diagnostics.Debug.WriteLine("value 2:" + diceImage2);
 
@@ -129,6 +132,7 @@ namespace MonoployAnalisis
 
             }
             RefreshFunds();
+            
         }
 
         private void fundsP1_Click(object sender, EventArgs e)
