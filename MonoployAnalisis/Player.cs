@@ -11,8 +11,12 @@ namespace MonoployAnalisis
         public enum PlayerPiece
         {
             Car,
+            Dedal,
             Dog,
-            MoneyBag,
+            Hat,
+            Iron,
+            Oldboot,
+            Ship,
             WheelCart
         };
 
@@ -25,6 +29,16 @@ namespace MonoployAnalisis
         {
             get { return this._piece; }
         }
+
+        public void SetPiece(PlayerPiece piece)
+        {
+            this._piece = piece;
+        }
+
+        public void SetName(string name)
+        {
+            this._name = name;
+        }
         public int Funds
         {
             get { return _funds;  }
@@ -33,17 +47,26 @@ namespace MonoployAnalisis
         {
             get { return _currentPosition; }
         }
+
+        public void SetCurrentPosition(int pos)
+        {
+            _currentPosition = pos;
+        }
         public string Name
         {
             get { return _name; }
         }
-        public Player(PlayerPiece piece, string name)
+        public IList<Property> GetOwnedProperties
         {
-            _piece = piece;
+            get { return _ownedProperties; }
+        }
+        public Player()
+
+        {
             _funds = 0;
             _currentPosition = 0;
             _ownedProperties = new List<Property>();
-            _name = name;
+
         }
 
         public int AddFunds(int fundsToAdd)
@@ -73,7 +96,7 @@ namespace MonoployAnalisis
             receivingPlayer.AddFunds(amountToTransfer);
         }
 
-       /* public void PurchaseProperty(Property property)
+        public void PurchaseProperty(Property property)
         {
             if (Funds < property._cost)
             {
@@ -83,6 +106,6 @@ namespace MonoployAnalisis
             _funds -= property._cost;
             _ownedProperties.Add(property);
             property.Owner = this;
-        }*/
+        }
     }
 }
