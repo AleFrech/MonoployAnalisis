@@ -46,27 +46,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bank.cs" />
+    <Compile Include="BoardObject.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameLogic.cs" />
+    <Compile Include="Go.cs" />
+    <Compile Include="IncomeTax.cs" />
+    <Compile Include="InsufficientFundsException.cs" />
+    <Compile Include="PickPiece.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PickPiece.Designer.cs">
+      <DependentUpon>PickPiece.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="Jail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Property.cs" />
+    <Compile Include="SuperTax.cs" />
+    <EmbeddedResource Include="PickPiece.resx">
+      <DependentUpon>PickPiece.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -75,6 +98,99 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\board.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classicCar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dedal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fancyDog.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fancyHat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iron.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oldBoot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ship.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheelBarrow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classicCar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dedal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fancyDog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fancyHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oldBoot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ship.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheelBarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grayDice.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redDice.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
